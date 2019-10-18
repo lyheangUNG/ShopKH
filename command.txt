@@ -1,0 +1,3 @@
+Task Schedule run to check ads end date every day
+	php artisan items:truncate
+	php artisan schedule:run
