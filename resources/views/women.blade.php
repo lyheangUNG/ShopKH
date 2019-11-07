@@ -15,7 +15,7 @@
                         @if ($product->category_id == $category->id)
                         <div class="product-wrapper">
                             <div class="product-img">
-                                <a href="#">
+                                <a href="{{route('products.page',$product->id)}}">
                                     @foreach ($products_image as $product_image)
                                         @if($product->id==$product_image->id)
                                             <img src="{{asset('uploads/product_image/'.$product_image->image)}}" alt="">

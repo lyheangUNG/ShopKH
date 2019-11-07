@@ -54,6 +54,22 @@ class UserHomePageController extends Controller
         return view('women',compact('categories','products','products_image'));
     }
 
+    public function allproduct(){
+        $colors = Color::where('color','default')->get();
+        $products = Products::all();
+        // dd($colors);
+        return view('allproduct',compact('products','colors'));
+    }
+
+    public function search(Request $request){
+        $keyword = $request->search;
+        // dd($keyword);
+        $products = Products::where('name','like','%'.$keyword.'%')->get();
+        $colors = Color::where('color','default')->get();
+        // dd($products);
+        return view('allproduct',compact('products','colors'));
+    }
+
     public function show($id){
         $product = Products::findOrFail($id);
         $sizes = Size::where('product_id',$id)->get();

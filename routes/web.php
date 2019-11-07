@@ -48,6 +48,8 @@ Route::get('/show/{id}', ['as' => 'products.page', 'uses' => 'UserHomePageContro
 Route::post('/product-addtocart/{id}','UserHomePageController@addtocart')->name('product.addtocart');
 Route::get('/cart','UserHomePageController@allcart')->name('allcart');
 Route::get('/remove_cart/{index}','UserHomePageController@removecart')->name('product.removecart');
+Route::get('/allproduct', ['as' => 'allproduct', 'uses' => 'UserHomePageController@allproduct']);
+Route::get('/search', ['as' => 'search.name', 'uses' => 'UserHomePageController@search']);
 // Route::get('/', 'UserHomePageController@index')->name('user.home');
 
 // Route::get('/users', 'UserHomeController@index')->name('home');

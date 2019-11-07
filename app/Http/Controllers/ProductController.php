@@ -32,7 +32,7 @@ class ProductController extends Controller
                             ->orWhere('brand','like','%'.$keyword.'%')
                             // ->orWhere('created_at','like','%'.$keyword.'%')
                             // ->orWhere('updated_at','like','%'.$keyword.'%')
-            ->paginate(5);
+            ->paginate(3);
         $products->withPath('products');
         $products->appends($request->all());
         if ($request->ajax()) {

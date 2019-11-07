@@ -26,7 +26,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        $schedule->command('items:truncate')->daily();
+        $schedule->command('items:truncate')->everyMinute();
+        // $schedule->command('items:truncate')->daily();
+
     }
 
     /**

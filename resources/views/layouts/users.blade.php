@@ -57,6 +57,7 @@
                             <div class="menu-style-2 furniture-menu menu-hover">
                                 <nav>
                                     <ul>
+                                        <li><a href="{{route('allproduct')}}">All</a></li>
                                         <!-- <li><a href="#">Home</a></li> -->
                                         <li><a href="{{route('men.page')}}">Men</a>
                                             <!-- <ul class="single-dropdown">
@@ -253,11 +254,13 @@
                                 </ul>
                             </div>
                             <div class="furniture-search">
-                                <form action="#">
-                                    <input placeholder="Search" type="text">
-                                    <button>
-                                        <i class="ti-search"></i>
-                                    </button>
+                                <form action="{{route('search.name')}}" method="GET">
+                                    @csrf
+                                    <input placeholder="Search" type="text" name="search">
+                                    <button class="btn shadow--none shadow--hover" type="submit"><i class="fa fa-search"></i></button>
+                                    {{-- <button>
+                                        <i type="submit" class="ti-search"></i>
+                                    </button> --}}
                                 </form>
                             </div>
                             <div class="furniture-wishlist">
